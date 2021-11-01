@@ -1,6 +1,6 @@
 package ktpm.cqa.userservice.controller;
 
-import ktpm.cqa.userservice.VO.ResponseTemplateVO;
+import ktpm.cqa.userservice.VO.UserVO;
 import ktpm.cqa.userservice.entity.User;
 import ktpm.cqa.userservice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +22,8 @@ public class UserController {
         return userService.saveUser(user);
     }
 
-    @GetMapping("/{id}")
-    public ResponseTemplateVO getSinhVienWithKhoa(@PathVariable("id") Long userId){
+    @GetMapping("/{userId}")
+    public UserVO getUserWithDepartmentById(@PathVariable("userId") Long userId){
         return userService.getUserWithDepartment(userId);
     }
 }
